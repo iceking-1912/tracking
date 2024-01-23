@@ -1,0 +1,30 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Order Tracking</title>
+</head>
+<body>
+    <header>
+        <h1>Order Tracking</h1>
+    </header>
+    
+    <main>
+        <section class="order-details">
+            <h2>Order #12345</h2>
+            <p>Product: Rounder</p>
+            <p>Status: Shipped</p>
+            <p>Tracking Number: ABC123XYZ</p>
+            <button onclick="trackOrder('ABC123XYZ')">Track Order</button>
+        </section>
+        
+        <section class="tracking-results" id="trackingResults">
+            <!-- Tracking details will be displayed here -->
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 
