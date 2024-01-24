@@ -1,24 +1,29 @@
-function trackOrder(trackingNumber) {
-    // Simulate an API call to get tracking details
-    const trackingDetails = getTrackingDetailsFromAPI(trackingNumber);
+// script.js
 
-    // Display the tracking details on the page
-    const trackingResults = document.getElementById("trackingResults");
-    trackingResults.innerHTML = `
-        <h2>Tracking Details for Order #12345</h2>
-        <p>Status: ${trackingDetails.status}</p>
-        <p>Location: ${trackingDetails.location}</p>
-        <p>Estimated Delivery Date: ${trackingDetails.estimatedDelivery}</p>
-    `;
+function trackOrder(trackingNumber) {
+    // Simulate tracking API call
+    const trackingDetails = getTrackingDetails(trackingNumber);
+
+    // Display tracking details
+    displayTrackingResults(trackingDetails);
 }
 
-// Simulated API call to get tracking details
-function getTrackingDetailsFromAPI(trackingNumber) {
-    // In a real scenario, you would make an AJAX or fetch request to your server or a third-party API.
-    // For simplicity, here we simulate the data.
+function getTrackingDetails(trackingNumber) {
+    // Simulate tracking API response
+    // In a real scenario, you would fetch the details from your server/database
     return {
-        status: "In Transit",
-        location: "Pune, India",
-        estimatedDelivery: "January 24, 2024"
+        location: 'G13 Bvcoel pune',
+        status: 'Out for Delivery',
+        estimatedDelivery: 'January 24, 2024 by 9:30 AM IST',
     };
+}
+
+function displayTrackingResults(details) {
+    const trackingResultsSection = document.getElementById('trackingResults');
+    trackingResultsSection.innerHTML = `
+        <h3>Tracking Details</h3>
+        <p><strong>Status:</strong> ${details.status}</p>
+        <p><strong>Location:</strong> ${details.location}</p>
+        <p><strong>Estimated Delivery:</strong> ${details.estimatedDelivery}</p>
+    `;
 }
